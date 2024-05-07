@@ -22,10 +22,10 @@ on:
 env:
   REPO_URL: https://github.com/openwrt/openwrt.git
   REPO_BRANCH: v23.05.3
-  CONFIG_FILE: opwrt-23.05/Opwrt-R4AGv2.config
-  DIY_P1_SH: opwrt-23.05/Opwrt-p1_feeds.sh
-  DIY_P2_SH: opwrt-23.05/Opwrt-p2_config.sh
-  DIY_P3_SH: opwrt-23.05/Opwrt-p3_mv.sh
+  CONFIG_FILE: opwrt-23.05.3/Opwrt-R4AGv2.config
+  DIY_P1_SH: opwrt-23.05.3/Opwrt-p1_feeds.sh
+  DIY_P2_SH: opwrt-23.05.3/Opwrt-p2_config.sh
+  DIY_P3_SH: opwrt-23.05.3/Opwrt-p3_mv.sh
   UPLOAD_BIN_DIR: true
   UPLOAD_FIRMWARE: true
   UPLOAD_COWTRANSFER: false
@@ -77,16 +77,16 @@ jobs:
       - name: Upload Files for Hardware Changes
         run: |
           # Upload 01_leds
-          cp -f $GITHUB_WORKSPACE/opwrt-23.05/hw2add/01_leds $GITHUB_WORKSPACE/openwrt/target/linux/ramips/mt7621/base-files/etc/board.d
+          cp -f $GITHUB_WORKSPACE/opwrt-23.05.3/hw2add/01_leds $GITHUB_WORKSPACE/openwrt/target/linux/ramips/mt7621/base-files/etc/board.d
 
           # Upload 02_network
-          cp -f $GITHUB_WORKSPACE/opwrt-23.05/hw2add/02_network $GITHUB_WORKSPACE/openwrt/target/linux/ramips/mt7621/base-files/etc/board.d
+          cp -f $GITHUB_WORKSPACE/opwrt-23.05.3/hw2add/02_network $GITHUB_WORKSPACE/openwrt/target/linux/ramips/mt7621/base-files/etc/board.d
 
           # Upload 03_gpio_switches
-          cp -f $GITHUB_WORKSPACE/opwrt-23.05/hw2add/03_gpio_switches $GITHUB_WORKSPACE/openwrt/target/linux/ramips/mt7621/base-files/etc/board.d
+          cp -f $GITHUB_WORKSPACE/opwrt-23.05.3/hw2add/03_gpio_switches $GITHUB_WORKSPACE/openwrt/target/linux/ramips/mt7621/base-files/etc/board.d
 
           # Upload mt7621_xiaomi_mi-router-4a-gigabit-v2.dts
-          cp -f $GITHUB_WORKSPACE/opwrt-23.05/hw2add/mt7621_xiaomi_mi-router-4a-gigabit-v2.dts $GITHUB_WORKSPACE/openwrt/target/linux/ramips/dts
+          cp -f $GITHUB_WORKSPACE/opwrt-23.05.3/hw2add/mt7621_xiaomi_mi-router-4a-gigabit-v2.dts $GITHUB_WORKSPACE/openwrt/target/linux/ramips/dts
 
       - name: Load custom feeds
         run: |
